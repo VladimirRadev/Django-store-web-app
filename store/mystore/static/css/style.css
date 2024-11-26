@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer {
+    background-color: #0d3a43;
+    text-align: center;
+    font-size: small;
+    color: white;
+}
+body {
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    color: gray;
+    font-size: 3rem;
+    display: flex;
+    flex-flow: column;
+}
+about {
+    margin-top: 100%;
+    text-align: center;
+    color: gray;
+    font-size: 2rem;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #0d3a43;
+    color: white;
+    font-size: 2.5rem;
+}
+
+main {
+    flex-grow: 1;
+    display: grid;
+    place-content: center;
+}
+
+h1,
+p,#continue-shopping-link  {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+a {
+
+    text-decoration: none;
+    color: #81dbb8;
+}
+.right-corner-nav-1
+{
+    margin-left: 70%;
+}
+.right-corner-nav-2
+{
+    margin-left: 10px;
+}
+.right-corner-nav-3
+{
+    margin-left: 10px;
+}
+#continue-shopping-link 
+{
+    font-family: sans-serif;
+    margin: auto;
+    color: yellowgreen;
+    margin-left: 2%;
+}
+#continue-shopping-link:hover 
+{
+    cursor: pointer;
+    opacity: 0.85;
+    color: aquamarine;
+}
+#quantity {
+    color: blue;
+}
+#checkout-price 
+{
+    margin-left: 2%;
+}
+#empty-cart {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+    background-color: rgb(255, 7, 7);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 1%;
+    margin-left: 2%;
+
+}
+#buy-cart {
+    font-size: large;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    margin-left: 2%;
+    margin-bottom: 5%;
+}
+#empty-cart:hover , #buy-cart:hover {
+    cursor: pointer;
+    opacity: 0.85;
+    background-color: grey;
+}
+.existing-account-link {
+    text-align: left;
+    padding-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
+    color: cadetblue;
+}
+.existing-account-link:hover {
+    cursor: pointer;
+    color:chartreuse;
+}
+a:hover {
+    opacity: .85;
+}
+.helptext {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.helptext ul {
+    list-style-type: none;
+}
+
+.errorlist {
+    color: #F00;
+    margin-left: 2rem;
+}
+
+.errorlist li::marker {
+    content: '🚨 ';
+}
+
+.product-grid {
+    display: flex;
+    gap: 4px;
+    margin: 2%;
+    overflow-y:scroll;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 33%;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-card * {
+    color: #0d432e;
+}
+.product-card img {
+    max-width: 20%;
+    border-radius: 8px 8px 0 0;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-description {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.product-price {
+    font-size: 30px;
+    color: green;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.product-quantity {
+    font-size: 20px;
+    color: #1137a8;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #2980b9;
+}
+.form-with-validation {
+    font-size: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.form-with-validation div {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
+}
+
+.form-with-validation input {
+    padding: 0.25rem;
+    max-width: 300px;
+}
+
+.form-submit {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background-color: #0d3a43;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    
+}
+.form-submit:hover {
+    cursor: pointer;
+    opacity: 1.2;
+    background-color: gray;
+    color: #81dbb8;
+}

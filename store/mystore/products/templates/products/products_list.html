@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Products
+{% endblock %}
+
+{% block content %}
+<h1>Products List.</h1>
+<div class="product-grid">
+    {% for product in products %}
+    <form class="product-card" action="/accounts/shopping-cart/" method="post">
+        {% csrf_token %}
+        <div>
+            <img src="{{product.img.url}}" alt="{{product.title}}">
+            <div class="product-title">{{product.title}}</div>
+            <div class="product-description">{{product.description}}</div>
+            <div class="product-price">${{product.price}}</div>
+            <div class="product-quantity">{{product.quantity}} available.</div>
+            <input type="hidden" name= "product" value="{{product.title}}">
+            <button class="add-to-cart-btn">Add to Shopping Cart</button>
+        </div>
+    </form>
+    {% endfor %}
+
+</div>
+{% endblock %}

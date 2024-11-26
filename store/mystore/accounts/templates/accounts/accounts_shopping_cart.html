@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Shopping-cart
+{% endblock %}
+
+{% block content %}
+<h1>Your shopping-cart items, {{ user }}:</h1>
+
+
+
+{% if products %}
+<h4><a id="continue-shopping-link" href="/products/">Continue shopping 🛒</a></h4>
+{% for product in products %}
+<section class="product-grid">
+    <section class="product-card">
+        <img src="{{ product.product.img.url }}" alt="shopping-cart-img">
+        <h4> {{ product.product.title }} </h4>
+        <h4>${{ product.product.price }}</h4>
+        <h4 id="quantity">Quantity {{ product.quantity }}</h4>
+    </section>
+</section>
+{% endfor %}
+
+<h4 id="checkout-price">Checkout price: ${{ total_sum }}</h4>
+<!-- Form to Empty Cart -->
+<form action="/accounts/shopping-cart/empty/" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="products" id="empty-cart-products">
+    <button id="empty-cart">Empty shopping cart</button>
+</form>
+
+<!-- Form to Buy Cart -->
+<form action="/accounts/orders/" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="products" id="buy-cart-products">
+    <button id="buy-cart">Buy all from shopping cart</button>
+</form>
+
+{% else %}
+<h4>There are no products in your shopping-cart. Go to <a href="/products/">Products</a>.</h4>
+{% endif %}
+<script>
+    // Create a dictionary of products to send in the form.
+    var productsData = [
+        {% for product in products %}
+            {
+                "product_id": "{{ product.product.id }}",
+                "title": "{{ product.product.title }}",
+                "price": "{{ product.product.price }}",
+                "quantity": "{{ product.quantity }}",
+                "image_url": "{{ product.product.img.url }}"
+            }
+            {% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ];
+
+    // Serialize the products data into JSON format.
+    var jsonProducts = JSON.stringify(productsData);
+
+    // Set the JSON string as the value of the hidden input fields.
+    document.getElementById('empty-cart-products').value = jsonProducts;
+    document.getElementById('buy-cart-products').value = jsonProducts;
+</script>
+{% endblock %}

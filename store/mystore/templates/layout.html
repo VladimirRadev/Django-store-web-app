@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title%}
+        Store App
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        {% if user.is_authenticated %} 
+        <a href="/products">Products |</a>
+        <a class="right-corner-nav-1" href="/accounts/shopping-cart/">🛒</a> |
+        <a class="right-corner-nav-2" href="/accounts">🧑</a> |
+        <a class="right-corner-nav-3" href="/accounts/logout">🔓</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+         <div>
+            Djano Web Framework 2024. Go check<a href="/about"> about </a>page
+         </div> 
+    </footer>
+
+</body>
+
+</html>

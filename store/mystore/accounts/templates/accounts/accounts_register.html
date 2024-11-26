@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Register new user
+{% endblock %}
+
+{% block content %}
+    <form class = "form-with-validation" action="/accounts/register/" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button class="form-submit">Register</button>
+    </form>
+    <a class="existing-account-link" href="/accounts/login/">Already have an account ?</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>Go check our exciting <a href="/products">products</a></h1>
+
+    {% else %}
+        <h1>You are not logged in. Go to <a href="/accounts/register">Register</a> page or <a href="/accounts/login">Login</a> page.</h1>
+        
+    {% endif %}
+{% endblock %}

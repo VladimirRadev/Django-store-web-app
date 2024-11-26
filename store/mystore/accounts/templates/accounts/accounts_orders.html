@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Shopping-cart
+{% endblock %}
+
+{% block content %}
+{% if orders %}
+
+<h1>Your orders, {{ user }}:</h1>
+<ol>
+{% for order in orders %}
+        <li>
+            <h4>Date: {{order.date}}</h4>
+        </li>
+        {% endfor %}
+</ol>
+
+{% else %}
+<h1>There are no orders, {{user}}. <a href="/products/">Go to products.</a></h1>
+{% endif %}
+
+{% endblock %}
